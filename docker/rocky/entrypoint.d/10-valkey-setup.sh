@@ -54,4 +54,4 @@ else
   sed -i "s|^bind.*|bind * -::*|g" "${VALKEY_CONFIG_PATH}"
 fi
 
-if [ "$DEBUG" = "true" ]; then echo "→ [valkey] Redis has been set up."; fi
+if [ "$DEBUG" = "true" ]; then echo "→ [valkey] Valkey has been set up."; fi

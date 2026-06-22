@@ -32,7 +32,7 @@ features:
 
   - icon: 🐳
     title: DevContainer Ready
-    details: Pre-configured DevContainer with 20+ CI tools and 40+ VS Code extensions. Supports both Single Container and Docker Compose (PostgreSQL, Redis) modes.
+    details: Pre-configured DevContainer with 20+ CI tools and 40+ VS Code extensions. Supports both Single Container and Docker Compose (PostgreSQL, Valkey) modes.
 
   - icon: 🌍
     title: Cross-Platform

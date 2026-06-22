@@ -1,6 +1,6 @@
 # Lua Development Guidelines
 
-> Objective: Define standards for clean, performant, and maintainable Lua scripting across embedding environments (OpenResty/nginx, Redis, game engines), covering scoping, idioms, OOP, error handling, performance, and testing.
+> Objective: Define standards for clean, performant, and maintainable Lua scripting across embedding environments (OpenResty/nginx, Valkey, game engines), covering scoping, idioms, OOP, error handling, performance, and testing.
 
 ::: tip Source File
 View the full rule: [`.agent/rules/lua.md`](https://github.com/snowdreamtech/template/blob/main/.agent/rules/lua.md)

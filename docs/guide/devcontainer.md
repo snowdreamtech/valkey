@@ -34,7 +34,7 @@ Includes additional backend services for full-stack development.
 **Available services:**
 
 - **PostgreSQL** — Relational database
-- **Redis** — Cache and message broker
+- **Valkey** — Cache and message broker
 
 To enable Docker Compose mode:
 
