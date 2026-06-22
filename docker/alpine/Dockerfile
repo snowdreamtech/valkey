@@ -17,11 +17,11 @@ ARG BUILDTIME \
     PUID=0 \
     USER=root \
     WORKDIR=/root \
-    VALKEY_VERSION=8.0.2-r0
+    VALKEY_VERSION=9.0.4-r0
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 # x-release-please-start-version
-LABEL org.opencontainers.image.version="${VERSION:-8.0.2}"
+LABEL org.opencontainers.image.version="${VERSION:-9.0.4}"
 # x-release-please-end
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.title="Valkey Image Based On Alpine" \

@@ -18,7 +18,7 @@ ARG BUILDTIME \
     PUID=0 \
     USER=root \
     WORKDIR=/root \
-    VALKEY_VERSION=8.1.1+dfsg1-3
+    VALKEY_VERSION=8.1.1+dfsg1-3+deb13u2
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 # x-release-please-start-version
