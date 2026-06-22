@@ -20,9 +20,6 @@ ARG BUILDTIME \
     VALKEY_VERSION=9.0.4-r0
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
-# x-release-please-start-version
-LABEL org.opencontainers.image.version="${VERSION:-9.0.4}"
-# x-release-please-end
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.title="Valkey Image Based On Alpine" \
     org.opencontainers.image.description="Docker Images for Valkey on Alpine. (386, amd64, arm/v6, arm/v7, arm64, ppc64le, riscv64, s390x)" \
@@ -34,6 +31,10 @@ LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
     org.opencontainers.image.url="https://github.com/snowdreamtech/valkey"
+
+# x-release-please-start-version
+LABEL org.opencontainers.image.version="${VERSION:-9.0.4}"
+# x-release-please-end
 
 # Runtime Environment Configuration
 ENV KEEPALIVE=${KEEPALIVE} \

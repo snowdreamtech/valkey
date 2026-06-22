@@ -20,9 +20,6 @@ ARG BUILDTIME \
     VALKEY_VERSION=8.0.9-1.el10_2
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
-# x-release-please-start-version
-LABEL org.opencontainers.image.version="${VERSION:-8.0.9}"
-# x-release-please-end
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.title="Valkey Image Based On Rocky" \
     org.opencontainers.image.description="Docker Images for Valkey on Rocky. (amd64, arm64, ppc64le, s390x)" \
@@ -34,6 +31,10 @@ LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
     org.opencontainers.image.url="https://github.com/snowdreamtech/valkey"
+
+# x-release-please-start-version
+LABEL org.opencontainers.image.version="${VERSION:-8.0.9}"
+# x-release-please-end
 
 # Runtime Environment Configuration
 ENV KEEPALIVE=${KEEPALIVE} \

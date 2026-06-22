@@ -21,9 +21,6 @@ ARG BUILDTIME \
     VALKEY_VERSION=8.1.1+dfsg1-3+deb13u2
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
-# x-release-please-start-version
-LABEL org.opencontainers.image.version="${VERSION:-8.1.1}"
-# x-release-please-end
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.title="Valkey Image Based On Debian" \
     org.opencontainers.image.description="Docker Images for Valkey on Debian. (386, amd64, arm/v5, arm/v7, arm64, riscv64, ppc64le, s390x)" \
@@ -35,6 +32,10 @@ LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
     org.opencontainers.image.url="https://github.com/snowdreamtech/valkey"
+
+# x-release-please-start-version
+LABEL org.opencontainers.image.version="${VERSION:-8.1.1}"
+# x-release-please-end
 
 # Runtime Environment Configuration
 ENV DEBIAN_FRONTEND=${DEBIAN_FRONTEND} \
