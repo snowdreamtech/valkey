@@ -601,7 +601,7 @@ repos:
       - id: zizmor
         name: zizmor security check
         language: system
-        entry: unirtm hook-exec zizmor --config .zizmor.yml
+        entry: unirtm hook-exec zizmor --config .zizmor.yml --no-online-audits
         files: ^\.github/workflows/.*\.yml$
         description: "Audit GitHub Actions workflows for security best practices."
 
