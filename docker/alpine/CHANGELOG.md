@@ -24,9 +24,3 @@
 * **release:** deduplicate CHANGELOG headers ([64038ca](https://github.com/snowdreamtech/valkey/commit/64038ca8d027ee5beee1a1c96dbd2f88b9d5a611))
 * update alpine base image to 3.24.1 ([3021ed3](https://github.com/snowdreamtech/valkey/commit/3021ed3b4ffa5f8916f5fa46aa4325e8ebf84ba6))
 
-## [9.0.4](https://github.com/snowdreamtech/valkey/compare/alpine-v9.0.4...alpine-v9.0.4) (2026-06-23)
-
-
-### 🐛 Bug Fixes
-
-* enable KEEPALIVE by default and fix smoke test timeout ([551ddbd](https://github.com/snowdreamtech/valkey/commit/551ddbd856bc5f3df21f1415411bcea244acf30f))

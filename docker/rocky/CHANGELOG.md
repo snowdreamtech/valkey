@@ -25,9 +25,3 @@
 * **release:** deduplicate CHANGELOG headers ([64038ca](https://github.com/snowdreamtech/valkey/commit/64038ca8d027ee5beee1a1c96dbd2f88b9d5a611))
 * **speckit:** manual auto-commit trigger ([5f8a5a9](https://github.com/snowdreamtech/valkey/commit/5f8a5a9cba5d6bd42a65eaabfecd6e18b01aeeb0))
 
-## [8.0.9](https://github.com/snowdreamtech/valkey/compare/rocky-v8.0.9...rocky-v8.0.9) (2026-06-23)
-
-
-### 🐛 Bug Fixes
-
-* enable KEEPALIVE by default and fix smoke test timeout ([551ddbd](https://github.com/snowdreamtech/valkey/commit/551ddbd856bc5f3df21f1415411bcea244acf30f))
