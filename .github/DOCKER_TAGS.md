@@ -4,7 +4,7 @@ This document describes the Docker image tagging strategy for the base template 
 
 ## Tag Naming Convention
 
-All images use the format: `snowdreamtech/base:TAG`
+All images use the format: `snowdreamtech/valkey:TAG`
 
 Where `TAG` follows these patterns:
 
@@ -15,8 +15,8 @@ Where `TAG` follows these patterns:
 
 All tags are pushed to three registries:
 
-- **DockerHub**: `snowdreamtech/base:TAG`
-- **GitHub Container Registry**: `ghcr.io/snowdreamtech/base:TAG`
+- **DockerHub**: `snowdreamtech/valkey:TAG`
+- **GitHub Container Registry**: `ghcr.io/snowdreamtech/valkey:TAG`
 
 ## Tag Scenarios
 
@@ -31,10 +31,10 @@ git push origin dev
 **Generated tags:**
 
 ```
-snowdreamtech/base:dev-alpine
-snowdreamtech/base:dev-debian
-snowdreamtech/base:dev              # ← Debian (default)
-snowdreamtech/base:dev-rocky
+snowdreamtech/valkey:dev-alpine
+snowdreamtech/valkey:dev-debian
+snowdreamtech/valkey:dev              # ← Debian (default)
+snowdreamtech/valkey:dev-rocky
 ```
 
 #### Push to `main` branch
@@ -46,14 +46,14 @@ git push origin main
 **Generated tags:**
 
 ```
-snowdreamtech/base:main-alpine
-snowdreamtech/base:latest-alpine
-snowdreamtech/base:main-debian
-snowdreamtech/base:latest-debian
-snowdreamtech/base:main             # ← Debian (default)
-snowdreamtech/base:latest           # ← Debian (default)
-snowdreamtech/base:main-rocky
-snowdreamtech/base:latest-rocky
+snowdreamtech/valkey:main-alpine
+snowdreamtech/valkey:latest-alpine
+snowdreamtech/valkey:main-debian
+snowdreamtech/valkey:latest-debian
+snowdreamtech/valkey:main             # ← Debian (default)
+snowdreamtech/valkey:latest           # ← Debian (default)
+snowdreamtech/valkey:main-rocky
+snowdreamtech/valkey:latest-rocky
 ```
 
 ---
@@ -70,8 +70,8 @@ git push origin alpine-v3.23.4
 **Generated tags:**
 
 ```
-snowdreamtech/base:3.23.4-alpine
-snowdreamtech/base:latest-alpine
+snowdreamtech/valkey:3.23.4-alpine
+snowdreamtech/valkey:latest-alpine
 ```
 
 #### Debian Release
@@ -84,10 +84,10 @@ git push origin debian-v13.4.0
 **Generated tags:**
 
 ```
-snowdreamtech/base:13.4.0-debian
-snowdreamtech/base:latest-debian
-snowdreamtech/base:13.4.0           # ← Debian (default)
-snowdreamtech/base:latest           # ← Debian (default)
+snowdreamtech/valkey:13.4.0-debian
+snowdreamtech/valkey:latest-debian
+snowdreamtech/valkey:13.4.0           # ← Debian (default)
+snowdreamtech/valkey:latest           # ← Debian (default)
 ```
 
 #### Rocky Release
@@ -100,8 +100,8 @@ git push origin rocky-v10.1.0
 **Generated tags:**
 
 ```
-snowdreamtech/base:10.1.0-rocky
-snowdreamtech/base:latest-rocky
+snowdreamtech/valkey:10.1.0-rocky
+snowdreamtech/valkey:latest-rocky
 ```
 
 ---
@@ -114,18 +114,18 @@ snowdreamtech/base:latest-rocky
 
 ```
 # Alpine
-snowdreamtech/base:nightly-alpine
-snowdreamtech/base:20260427-alpine
+snowdreamtech/valkey:nightly-alpine
+snowdreamtech/valkey:20260427-alpine
 
 # Debian (with default tags)
-snowdreamtech/base:nightly-debian
-snowdreamtech/base:20260427-debian
-snowdreamtech/base:nightly          # ← Debian (default)
-snowdreamtech/base:20260427         # ← Debian (default)
+snowdreamtech/valkey:nightly-debian
+snowdreamtech/valkey:20260427-debian
+snowdreamtech/valkey:nightly          # ← Debian (default)
+snowdreamtech/valkey:20260427         # ← Debian (default)
 
 # Rocky
-snowdreamtech/base:nightly-rocky
-snowdreamtech/base:20260427-rocky
+snowdreamtech/valkey:nightly-rocky
+snowdreamtech/valkey:20260427-rocky
 ```
 
 ---
@@ -151,21 +151,21 @@ Debian is designated as the **default variant** (`is_latest: true`), which means
 ✅ **Debian gets BOTH suffixed AND unsuffixed tags:**
 
 ```
-snowdreamtech/base:nightly-debian   # Variant-specific
-snowdreamtech/base:nightly          # Default (no suffix)
+snowdreamtech/valkey:nightly-debian   # Variant-specific
+snowdreamtech/valkey:nightly          # Default (no suffix)
 
-snowdreamtech/base:13.4.0-debian    # Variant-specific
-snowdreamtech/base:13.4.0           # Default (no suffix)
+snowdreamtech/valkey:13.4.0-debian    # Variant-specific
+snowdreamtech/valkey:13.4.0           # Default (no suffix)
 
-snowdreamtech/base:latest-debian    # Variant-specific
-snowdreamtech/base:latest           # Default (no suffix)
+snowdreamtech/valkey:latest-debian    # Variant-specific
+snowdreamtech/valkey:latest           # Default (no suffix)
 ```
 
 ❌ **Alpine and Rocky get ONLY suffixed tags:**
 
 ```
-snowdreamtech/base:nightly-alpine   # Variant-specific only
-snowdreamtech/base:nightly-rocky    # Variant-specific only
+snowdreamtech/valkey:nightly-alpine   # Variant-specific only
+snowdreamtech/valkey:nightly-rocky    # Variant-specific only
 ```
 
 ---
@@ -175,49 +175,49 @@ snowdreamtech/base:nightly-rocky    # Variant-specific only
 ### Pull the latest Debian image (default)
 
 ```bash
-docker pull snowdreamtech/base:latest
+docker pull snowdreamtech/valkey:latest
 # or
-docker pull snowdreamtech/base:latest-debian
+docker pull snowdreamtech/valkey:latest-debian
 ```
 
 ### Pull the latest Alpine image
 
 ```bash
-docker pull snowdreamtech/base:latest-alpine
+docker pull snowdreamtech/valkey:latest-alpine
 ```
 
 ### Pull the latest Rocky image
 
 ```bash
-docker pull snowdreamtech/base:latest-rocky
+docker pull snowdreamtech/valkey:latest-rocky
 ```
 
 ### Pull a specific version
 
 ```bash
 # Alpine 3.23.4
-docker pull snowdreamtech/base:3.23.4-alpine
+docker pull snowdreamtech/valkey:3.23.4-alpine
 
 # Debian 13.4.0 (two ways)
-docker pull snowdreamtech/base:13.4.0-debian
-docker pull snowdreamtech/base:13.4.0
+docker pull snowdreamtech/valkey:13.4.0-debian
+docker pull snowdreamtech/valkey:13.4.0
 
 # Rocky 10.1.0
-docker pull snowdreamtech/base:10.1.0-rocky
+docker pull snowdreamtech/valkey:10.1.0-rocky
 ```
 
 ### Pull nightly builds
 
 ```bash
 # Alpine nightly
-docker pull snowdreamtech/base:nightly-alpine
+docker pull snowdreamtech/valkey:nightly-alpine
 
 # Debian nightly (two ways)
-docker pull snowdreamtech/base:nightly-debian
-docker pull snowdreamtech/base:nightly
+docker pull snowdreamtech/valkey:nightly-debian
+docker pull snowdreamtech/valkey:nightly
 
 # Rocky nightly
-docker pull snowdreamtech/base:nightly-rocky
+docker pull snowdreamtech/valkey:nightly-rocky
 ```
 
 ---
@@ -272,8 +272,8 @@ The key configuration that enables this tagging strategy:
 
 ```yaml
 images: |
-  name=snowdreamtech/base,enable=true
-  name=ghcr.io/snowdreamtech/base,enable=true
+  name=snowdreamtech/valkey,enable=true
+  name=ghcr.io/snowdreamtech/valkey,enable=true
 flavor: |
   latest=false
   prefix=

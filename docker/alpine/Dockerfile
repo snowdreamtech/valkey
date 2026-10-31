@@ -5,12 +5,12 @@ FROM ghcr.io/snowdreamtech/alpine:3.24.1
 
 # Build-time Configuration
 # x-release-please-start-version
-ARG VERSION="3.24.1"
+ARG VERSION="9.0.4"
 # x-release-please-end
 
 ARG BUILDTIME \
     REVISION \
-    KEEPALIVE=0 \
+    KEEPALIVE=1 \
     CAP_NET_BIND_SERVICE=0 \
     LANG=C.UTF-8 \
     UMASK=022 \
@@ -19,21 +19,22 @@ ARG BUILDTIME \
     PGID=0 \
     PUID=0 \
     USER=root \
-    WORKDIR=/root
+    WORKDIR=/root \
+    VALKEY_VERSION=9.0.4-r0
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
-    org.opencontainers.image.title="Base Image Based On Alpine" \
-    org.opencontainers.image.description="Docker Images for Base on Alpine. (i386, amd64, arm32v6, arm32v7, arm64, ppc64le, riscv64, s390x)" \
-    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/base" \
-    org.opencontainers.image.base.name="snowdreamtech/base:alpine" \
+    org.opencontainers.image.title="Valkey Image Based On Alpine" \
+    org.opencontainers.image.description="Docker Images for Valkey on Alpine. (386, amd64, arm/v6, arm/v7, arm64, ppc64le, riscv64, s390x)" \
+    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/valkey" \
+    org.opencontainers.image.base.name="snowdreamtech/alpine:3.24.1" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.source="https://github.com/snowdreamtech/base" \
+    org.opencontainers.image.source="https://github.com/snowdreamtech/valkey" \
     org.opencontainers.image.vendor="Snowdream Tech" \
     org.opencontainers.image.version="${VERSION}" \
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
-    org.opencontainers.image.url="https://github.com/snowdreamtech/base"
+    org.opencontainers.image.url="https://github.com/snowdreamtech/valkey"
 
 # Runtime Environment Configuration
 ENV KEEPALIVE=${KEEPALIVE} \
@@ -45,12 +46,21 @@ ENV KEEPALIVE=${KEEPALIVE} \
     PGID=${PGID} \
     PUID=${PUID} \
     USER=${USER} \
-    WORKDIR=${WORKDIR}
+    WORKDIR=${WORKDIR} \
+    VALKEY_VERSION=${VALKEY_VERSION} \
+    VALKEY_CONFIG_PATH=/etc/valkey/valkey.conf \
+    VALKEY_PORT=6379 \
+    VALKEY_PASS="" \
+    DISALLOW_USER_LOGIN_REMOTELY=1
 
-# Additional tooling and configuration for Base image
+# Additional tooling and configuration for Valkey image
 RUN apk update \
     && apk add --no-cache \
-    vim
+    valkey=${VALKEY_VERSION} \
+    && mkdir -p /etc/valkey \
+    && [ -f /etc/valkey.conf ] && mv /etc/valkey.conf ${VALKEY_CONFIG_PATH} || true
+
+EXPOSE 6379
 
 # Container Orchestration Files
 COPY entrypoint.d /usr/local/bin/entrypoint.d
