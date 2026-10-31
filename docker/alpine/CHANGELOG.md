@@ -1,5 +1,19 @@
 # Changelog
 
+## [9.0.4](https://github.com/snowdreamtech/valkey/compare/alpine-v9.0.4...alpine-v9.0.4) (2026-10-31)
+
+
+### 🚀 Features
+
+* align repository structure with base dev and upgrade rocky to 8.0.11 ([7c27f42](https://github.com/snowdreamtech/valkey/commit/7c27f4213a987c126b96ce1f36fb458b48fa7533))
+* initial release of snowdreamtech base docker images powered by unirtm ([25f55c8](https://github.com/snowdreamtech/valkey/commit/25f55c84e8fba977d226739e9871d61e1428fdeb))
+
+
+### ♻️ Miscellaneous Chores
+
+* release main ([a2cafdc](https://github.com/snowdreamtech/valkey/commit/a2cafdc012ed85559e0239e6333af767a878eff8))
+* **release:** deduplicate CHANGELOG headers ([ec1c2ef](https://github.com/snowdreamtech/valkey/commit/ec1c2ef80d3e6af152487494cd1727eaf502214b))
+
 ## [9.0.4](https://github.com/snowdreamtech/valkey/compare/alpine-v9.0.4...alpine-v9.0.4) (2026-08-11)
 
 
@@ -23,4 +37,3 @@
 * **release:** deduplicate CHANGELOG headers ([82be3d5](https://github.com/snowdreamtech/valkey/commit/82be3d5576b65b7f69b1a9afb8604f2c8f0e47f7))
 * **release:** deduplicate CHANGELOG headers ([64038ca](https://github.com/snowdreamtech/valkey/commit/64038ca8d027ee5beee1a1c96dbd2f88b9d5a611))
 * update alpine base image to 3.24.1 ([3021ed3](https://github.com/snowdreamtech/valkey/commit/3021ed3b4ffa5f8916f5fa46aa4325e8ebf84ba6))
-
